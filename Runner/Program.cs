@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
+using NewSimulator;
 
-namespace NewSimulator;
+namespace Runner;
 
 internal class Program
 {
@@ -10,7 +11,7 @@ internal class Program
         //Lab4a();
         //Lab4b();
         //Lab5a();
-        Lab5b();
+        //Lab5b();
     }
 
     static void Lab4a()
@@ -84,7 +85,7 @@ internal class Program
             Rectangle r5 = new Rectangle(p1, p3); // exception
             Console.WriteLine(r5);
         }
-        catch (Exception ex) 
+        catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
         }
@@ -104,15 +105,15 @@ internal class Program
     {
         try
         {
-            SmallSquareMap m4 = new SmallSquareMap(21); // exception
-            SmallSquareMap m1 = new SmallSquareMap(4); // exception
+            SmallSquareMap m4 = new SmallSquareMap(21, 21); // exception
+            SmallSquareMap m1 = new SmallSquareMap(4, 4); // exception
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
         }
-        SmallSquareMap m2 = new SmallSquareMap(5);
-        SmallSquareMap m3 = new SmallSquareMap(20);
+        SmallSquareMap m2 = new SmallSquareMap(5, 5);
+        SmallSquareMap m3 = new SmallSquareMap(20, 20);
         Point p1 = new Point(5, 5);
         Point p2 = new Point(20, 20);
         Point p3 = new Point(0, 0);

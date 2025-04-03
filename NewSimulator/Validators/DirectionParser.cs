@@ -8,7 +8,7 @@ namespace NewSimulator;
 
 public static class DirectionParser
 {
-    public static Direction[] Parse(string input)
+    public static List<Direction> Parse(string input)
     {
         List<Direction> result = new List<Direction>();
         foreach (char c in input.ToLower())
@@ -34,6 +34,6 @@ public static class DirectionParser
             }
         }
 
-        return result.ToArray();
+        return result;
     }
 }

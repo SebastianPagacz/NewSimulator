@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NewSimulator;
 
-class Orc : Creature
+public class Orc : Creature
 {
     private int _rage = 1;
     private int _huntCounter;
@@ -30,7 +30,6 @@ class Orc : Creature
     public override string Info { get => $"{Name} [{Level}][{Rage}]"; }
     public void Hunt()
     {
-        Console.WriteLine($"{Name} is hunting.");
         _huntCounter++;
         if (_huntCounter % 2==0)
         {
@@ -54,8 +53,8 @@ class Orc : Creature
 
     }
 
-    public override void SayHi()
+    public override string SayHi()
     {
-        Console.WriteLine($"Hi, I'm {Name}, my level is {Level}, my rage is {Rage}.");
+        return $"Hi, I'm {Name}, my level is {Level}, my rage is {Rage}.";
     }
 }

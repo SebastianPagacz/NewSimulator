@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NewSimulator;
 
-class Elf : Creature
+public class Elf : Creature
 {
     private int _agility = 1;
     private int _singCounter = 0;
@@ -27,7 +27,6 @@ class Elf : Creature
     public override string Info { get => $"{Name} [{Level}][{Agility}]"; }
     public void Sing()
     {
-        Console.WriteLine($"{Name} is singing.");
         _singCounter++;
         if (_singCounter % 3 == 0)
         {
@@ -51,8 +50,8 @@ class Elf : Creature
 
     }
 
-    public override void SayHi()
+    public override string SayHi()
     {
-        Console.WriteLine($"Hi, I'm {Name}, my level is {Level}, my agility is {Agility}.");
+        return $"Hi, I'm {Name}, my level is {Level}, my agility is {Agility}.";
     }
 }

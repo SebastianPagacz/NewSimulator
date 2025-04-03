@@ -7,27 +7,14 @@ using System.Threading.Tasks;
 
 namespace NewSimulator;
 
-public class SmallSquareMap : Map
+public class SmallSquareMap : SmallMap
 {
-    public Point LeftBottomCorner;
-    public Point RightTopCorner;
 
-    public SmallSquareMap(int size)
+    public SmallSquareMap(int sizeX, int sizeY) : base (sizeX, sizeY)
     {
-        if (size < 5 || size > 20)
-            throw new ArgumentOutOfRangeException("The size of the map is to small");
 
-        LeftBottomCorner = new Point(0, 0);
-        RightTopCorner = new Point(size, size);
     }
     
-    public override bool Exist(Point p)
-    {
-         if (p.X < LeftBottomCorner.X || p.X > RightTopCorner.X) return false;
-         if (p.Y < LeftBottomCorner.Y || p.Y > RightTopCorner.Y) return false;
-         else return true;
-    }
-
     public override Point Next(Point p, Direction d)
     {
         if (Exist(p.Next(d)))
